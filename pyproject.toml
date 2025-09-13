@@ -81,6 +81,8 @@ local_partial_types = true
 allow_redefinition_new = true
 
 [tool.pytest.ini_options]
+log_cli = true
+log_cli_level=200
 testpaths = [
     "tests",
 ]
