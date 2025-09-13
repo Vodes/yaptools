@@ -61,9 +61,9 @@ jobs:
           wget https://github.com/Vodes/muxtools-binaries/releases/download/${{ env.OPUS_VER }}/${{ env.OPUS_VER }}-linux-x86_64.zip && sudo unzip -o ${{ env.OPUS_VER }}-linux-x86_64.zip -d /usr/bin
           wget https://github.com/Vodes/muxtools-binaries/releases/download/${{ env.FLAC_VER }}/${{ env.FLAC_VER }}-linux-x86_64.zip && sudo unzip -o ${{ env.FLAC_VER }}-linux-x86_64.zip -d /usr/bin
           wget https://github.com/Vodes/muxtools-binaries/releases/download/${{ env.FFMPEG_VER }}/${{ env.FFMPEG_VER }}-linux-x86_64.zip && sudo unzip -o ${{ env.FFMPEG_VER }}-linux-x86_64.zip -d /usr/bin
-          sudo chmod 777 -R /usr/bin
+          sudo chmod 777 -R /usr/bin # Don't do this
       - name: Check binaries
-        run:
+        run: |
           opusenc --version
           flac --version
           ffmpeg -version

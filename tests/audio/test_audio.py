@@ -62,9 +62,6 @@ def test_flac_sox_trim():
 
 
 def test_flac_ffmpeg_trim():
-    # Cba to add sox to the github workflow
-    if os.name != "nt":
-        return
     meta = VideoMeta.from_json(test_dir / "test-data" / "input" / "vigilantes_s01e01.json")
 
     out = do_audio(sample_file_flac, trims=(24, None), timesource=meta, trimmer=FFMpeg.Trimmer(), encoder=Opus())
